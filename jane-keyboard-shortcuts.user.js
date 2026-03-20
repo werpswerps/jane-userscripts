@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Jane - Keyboard Shortcuts
+// @name         JaneApp - Keyboard Shortcuts
 // @version      1.3
 // @author       werpswerps
 // @match        https://*.janeapp.com/*
