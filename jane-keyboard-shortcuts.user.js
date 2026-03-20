@@ -1,5 +1,7 @@
 // ==UserScript==
-// @name         Jane – Keyboard Shortcuts
+// @name         Jane - Keyboard Shortcuts
+// @version      1.3
+// @author       werpswerps
 // @match        https://*.janeapp.com/*
 // @description  Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shift+,), and toggling Break mode (Shift+B). Also injects a Custom Shortcuts reference into Jane's built-in keyboard shortcuts popup (Shift+?).
 // @grant        none
