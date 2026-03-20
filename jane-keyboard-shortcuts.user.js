@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Jane – Keyboard Shortcuts
 // @match        https://*.janeapp.com/*
+// @description  Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shift+,), and toggling Break mode (Shift+B). Also injects a Custom Shortcuts reference into Jane's built-in keyboard shortcuts popup (Shift+?).
 // @grant        none
 // ==/UserScript==
 
@@ -13,23 +14,23 @@ window.addEventListener('keydown', function (e) {
   // Shift + 0 → Day
   if (e.shiftKey && !e.metaKey && !e.ctrlKey && e.key === ')') {
     e.preventDefault();
-    var link = document.querySelector('a[href="/admin#today"]');
-    if (link) link.click();
+    var dayLink = document.querySelector('a[href="/admin#today"]');
+    if (dayLink) dayLink.click();
     else window.location.href = '/admin#today';
   }
 
   // Shift + , → Settings
   if (e.shiftKey && !e.metaKey && !e.ctrlKey && e.key === '<') {
     e.preventDefault();
-    var link = document.querySelector('a[data-tab-label="nav-btn-settings"]');
-    if (link) link.click();
+    var settingsLink = document.querySelector('a[data-tab-label="nav-btn-settings"]');
+    if (settingsLink) settingsLink.click();
     else window.location.href = '/admin/company';
   }
 
   // Shift + B → Toggle Break mode
   if (e.shiftKey && !e.metaKey && !e.ctrlKey && e.key === 'B') {
     e.preventDefault();
-    var breakBtn = document.querySelector('#user-list-bottom button');
+    var breakBtn = document.querySelector('#user-list-bottom button') || document.querySelector('button[aria-label="Break"]');
     if (breakBtn) breakBtn.click();
   }
 
@@ -70,7 +71,6 @@ function injectCustomShortcuts() {
       buildItem('Toggle Break Mode', ['Shift', 'B']) +
     '</ul>';
 
-  // Append into the right column, after the Schedule Only content
   var rightCol = modal.querySelector('.modal-body .col-xs-6.schedule-section');
   if (rightCol) rightCol.appendChild(section);
 }
