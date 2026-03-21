@@ -6,6 +6,7 @@
 - [Jane Userscripts](#jane-userscripts)
 	- [Multi-line notes on schedule breaks](#multi-line-notes-on-schedule-breaks)
 	- [Additional Keyboard Shortcuts](#additional-keyboard-shortcuts)
+	- [Calendar Buffer Visualizer](#calendar-buffer-visualizer)
 
 ---
 
@@ -46,12 +47,14 @@ This ensures the script only runs on *your* Jane clinic and not any others that 
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | [Multi-line notes on schedule breaks](#multi-line-notes-on-schedule-breaks) | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-multiline-break-notes.user.js) |
 | [Additional Keyboard Shortcuts](#additional-keyboard-shortcuts)             | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-keyboard-shortcuts.user.js)    |
+| [Calendar Buffer Visualizer](#calendar-buffer-visualizer)                   | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-calendar-buffer-visualizer.user.js) |
 
 ---
 
 ### Multi-line notes on schedule breaks
 Preserves line breaks when adding notes to a break on the Jane schedule. Without this, all lines run together into a single line. No added markup is necessary when writing your notes.
 [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-multiline-break-notes.user.js)
+
 #### Before
 <img width="480" height="370" alt="Multiline Break Note - Before" src="https://github.com/user-attachments/assets/d51dedf8-a1b6-485f-85e4-438499273434" />
 
@@ -67,3 +70,14 @@ Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shif
 #### Keyboard Shortcuts Popup
 <img width="613" height="665" alt="Keyboard Shortcut Modal" src="https://github.com/user-attachments/assets/c2574bd4-61bb-4794-969f-378e144e9e5e" />
 
+---
+
+### Calendar Buffer Visualizer
+Visually separates buffer time from actual treatment time on the calendar, and corrects the displayed appointment end time to reflect when the treatment ends rather than when the scheduled block ends. Buffer duration is calculated automatically from your appointment type settings — no configuration needed.
+[Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-calendar-buffer-visualizer.user.js)
+
+#### Before
+<img width="247" height="579" alt="Calendar Buffer - Before" src="https://github.com/user-attachments/assets/d71b85d8-b54b-44f0-85f1-86cfa7c0c705" />
+
+#### After
+<img width="247" height="579" alt="Calendar Buffer - After" src="https://github.com/user-attachments/assets/794b8402-d08f-4fe1-9959-8c39e6ce7246" />
