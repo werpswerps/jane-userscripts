@@ -64,11 +64,11 @@ Preserves line breaks when adding notes to a break on the Jane schedule. Without
 ---
 
 ### Additional Keyboard Shortcuts
-Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shift+,), and toggling Break mode (Shift+B). Also injects a Custom Shortcuts reference into Jane's built-in keyboard shortcuts popup (Shift+?).
+Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shift+,), toggling Break mode (Shift+B), and pausing/resuming (Cmd+Shift+M) or finishing (Cmd+Shift+F) AI Scribe recording. Also injects a Custom Shortcuts reference into Jane's built-in keyboard shortcuts popup (Shift+?).
 [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-keyboard-shortcuts.user.js)
 
 #### Keyboard Shortcuts Popup
-<img width="613" height="665" alt="Keyboard Shortcut Modal" src="https://github.com/user-attachments/assets/c2574bd4-61bb-4794-969f-378e144e9e5e" />
+<img width="598" height="652" alt="Keyboard Shortcut Modal_001" src="https://github.com/user-attachments/assets/6ed1fefe-10a4-47b5-8e7d-dd6cb0553c47" />
 
 ---
 
