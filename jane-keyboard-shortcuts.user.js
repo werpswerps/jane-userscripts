@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         JaneApp - Keyboard Shortcuts
-// @version      1.3
+// @name         Jane – Keyboard Shortcuts
+// @version      1.5
 // @author       werpswerps
 // @match        https://*.janeapp.com/*
-// @description  Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shift+,), and toggling Break mode (Shift+B). Also injects a Custom Shortcuts reference into Jane's built-in keyboard shortcuts popup (Shift+?).
+// @description  Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shift+,), toggling Break mode (Shift+B), and pausing/resuming (Cmd+Shift+M) or finishing (Cmd+Shift+F) AI Scribe recording. Also injects a Custom Shortcuts reference into Jane's built-in keyboard shortcuts popup (Shift+?).
 // @grant        none
 // ==/UserScript==
 
@@ -27,6 +27,26 @@ window.addEventListener('keydown', function (e) {
     var settingsLink = document.querySelector('a[data-tab-label="nav-btn-settings"]');
     if (settingsLink) settingsLink.click();
     else window.location.href = '/admin/company';
+  }
+
+  // Cmd + Shift + M → Pause/Resume AI Scribe recording
+  if (e.shiftKey && e.metaKey && !e.ctrlKey && e.key === 'm') {
+    e.preventDefault();
+    var notice = document.getElementById('patient-recordings-global-notice');
+    if (!notice) return;
+    var scribeBtn = Array.from(notice.querySelectorAll('button'))
+      .find(function (b) { return b.textContent.trim() === 'Pause' || b.textContent.trim() === 'Resume'; });
+    if (scribeBtn) scribeBtn.click();
+  }
+
+  // Cmd + Shift + F → Finish AI Scribe recording
+  if (e.shiftKey && e.metaKey && !e.ctrlKey && e.key === 'f') {
+    e.preventDefault();
+    var noticeFinish = document.getElementById('patient-recordings-global-notice');
+    if (!noticeFinish) return;
+    var finishBtn = Array.from(noticeFinish.querySelectorAll('button'))
+      .find(function (b) { return b.textContent.trim() === 'Finish'; });
+    if (finishBtn) finishBtn.click();
   }
 
   // Shift + B → Toggle Break mode
@@ -71,6 +91,8 @@ function injectCustomShortcuts() {
       buildItem('Day', ['Shift', '0']) +
       buildItem('Settings', ['Shift', ',']) +
       buildItem('Toggle Break Mode', ['Shift', 'B']) +
+      buildItem('Pause / Resume AI Scribe', ['Cmd', 'Shift', 'M']) +
+      buildItem('Finish AI Scribe', ['Cmd', 'Shift', 'F']) +
     '</ul>';
 
   var rightCol = modal.querySelector('.modal-body .col-xs-6.schedule-section');
