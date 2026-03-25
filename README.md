@@ -7,6 +7,7 @@
 	- [Multi-line notes on schedule breaks](#multi-line-notes-on-schedule-breaks)
 	- [Additional Keyboard Shortcuts](#additional-keyboard-shortcuts)
 	- [Calendar Buffer Visualizer](#calendar-buffer-visualizer)
+	- [AI Scribe Cursor Placement Fix](#ai-scribe-cursor-placement-fix)
 
 ---
 
@@ -24,30 +25,33 @@ Once the extension is installed, click an install link (like those in the sectio
 - **Safari (Userscripts):** After clicking the install link you'll see a page with the userscript code. Click the Userscripts icon in your browser toolbar and select "Userscript Detected: Click to install."
 - **Tampermonkey / Violentmonkey:** Clicking the install link should automatically prompt you to confirm installation.
 
-Once installed, the script will run automatically whenever you're on the relevant page(s).
-
-**Optional:** After installing, open the script in your extension's editor and replace the first `*` at the start of the URL in the `// @match` line (usually line 5) with your clinic's subdomain. For example, if your clinic's Jane URL is `https://myclinic.janeapp.com`, the line should read:
-```
-// @match       https://myclinic.janeapp.com/admin*
-```
-This ensures the script only runs on *your* Jane clinic and not any others that you might visit.
+### Automatic Updates
+Once installed, the scripts will run automatically whenever you're on the relevant page(s) and automatically update themselves when the files hosted on GitHub are updated. The updates will overwrite any changes you make to the userscript. **To prevent this from happening:** remove the `@updateURL` and `@downloadURL` lines from the header after the script has been installed.
 
 > [!important]
 > These instructions are for desktop only. Mobile installation is possible but more involved and varies significantly by device and browser. Look up instructions for your specific setup.
 
 > [!warning]
-> These scripts interact directly with Jane's underlying code and may break if Jane updates their interface. If something stops working, you can disable the script in your extension's dashboard until an update becomes available — check back here for updates.
+> These are unofficial userscripts and are not affiliated with/reviewed by/approved by/supported by Jane Software Inc. These scripts interact directly with Jane's underlying code and may break if Jane updates their interface. Use at your own discretion.
+
+
+### Issues, Bugs, Questions, Feature Requests
+- If something stops working you can disable the script in your extension's dashboard. Please post in the Issues or Discussions tabs to share and explain the problem so I can work on an update. When available, updates will be applied automatically via your userscript extension (assuming you haven't removed the `@updateURL` or `@downloadURL` lines as mentioned above).
+- If you have any questions post them in the Discussions tab.
+- If you have requests for additional userscripts post them in the Issues tab.
 
 ---
 
 ## Jane Userscripts
-(More will be added soon. If you've written your own userscripts, contributions are welcome!)
+More will be added soon. If you've written your own userscripts, contributions are welcome!  
+Each userscript is provided individually, so you can install only what you need.
 
 | Script                                                                      |                                                                                                                  |
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | [Multi-line notes on schedule breaks](#multi-line-notes-on-schedule-breaks) | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-multiline-break-notes.user.js) |
 | [Additional Keyboard Shortcuts](#additional-keyboard-shortcuts)             | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-keyboard-shortcuts.user.js)    |
 | [Calendar Buffer Visualizer](#calendar-buffer-visualizer)                   | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-calendar-buffer-visualizer.user.js) |
+| [AI Scribe Cursor Placement Fix](#ai-scribe-cursor-placement-fix)           | [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-ai-scribe-cursor-fix.user.js) |
 
 ---
 
@@ -68,7 +72,7 @@ Adds keyboard shortcuts for navigating to the Day view (Shift+0), Settings (Shif
 [Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-keyboard-shortcuts.user.js)
 
 #### Keyboard Shortcuts Popup
-<img width="598" height="652" alt="Keyboard Shortcut Modal_001" src="https://github.com/user-attachments/assets/6ed1fefe-10a4-47b5-8e7d-dd6cb0553c47" />
+<img width="598" height="652" alt="Keyboard Shortcut Modal" src="https://github.com/user-attachments/assets/6ed1fefe-10a4-47b5-8e7d-dd6cb0553c47" />
 
 ---
 
@@ -81,3 +85,9 @@ Visually separates buffer time from actual treatment time on the calendar, and c
 
 #### After
 <img width="247" height="579" alt="Calendar Buffer - After" src="https://github.com/user-attachments/assets/794b8402-d08f-4fe1-9959-8c39e6ce7246" />
+
+---
+
+### AI Scribe Cursor Placement Fix
+Fixes bug where clicking AI Scribe textboxes sometimes places the cursor at the end of the text instead of where it was clicked.
+[Install](https://github.com/werpswerps/jane-userscripts/raw/refs/heads/main/jane-ai-scribe-cursor-fix.user.js)
