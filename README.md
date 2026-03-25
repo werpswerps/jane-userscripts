@@ -28,8 +28,7 @@ Once the extension is installed, click an install link (like those in the sectio
 ### Automatic Updates
 Once installed, the scripts will run automatically whenever you're on the relevant page(s) and automatically update themselves when the files hosted on GitHub are updated. The updates will overwrite any changes you make to the userscript. **To prevent this from happening:** remove the `@updateURL` and `@downloadURL` lines from the header after the script has been installed.
 
-> [!important]
-> These instructions are for desktop only. Mobile installation is possible but more involved and varies significantly by device and browser. Look up instructions for your specific setup.
+**Note:** These instructions are for desktop only. Mobile installation is possible but more involved and varies significantly by device and browser. Look up instructions for your specific setup.
 
 > [!warning]
 > These are unofficial userscripts and are not affiliated with/reviewed by/approved by/supported by Jane Software Inc. These scripts interact directly with Jane's underlying code and may break if Jane updates their interface. Use at your own discretion.
